@@ -1,0 +1,38 @@
+# Dependency directories
+node_modules/
+
+# Build files
+.next/
+out/
+dist/
+
+# Environment files
+.env*
+!.env.example
+
+# Logs
+*.log
+
+# Cache
+.cache/
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local development files
+*.local
+
+# Debug files
+*.pdb
+*.idb
+
+# Misc
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
