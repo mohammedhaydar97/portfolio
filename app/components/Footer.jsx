@@ -10,7 +10,7 @@ const Footer = () => {
 
                 <div className='w-max flex items-center gap-2 mx-auto'>
                     <Image src={assets.mail_icon} alt='' className='w-6' />
-                    <span>greatstackdev@gmail.com</span>
+                    <span>mouhamad_haydar@outlook.com</span>
                 </div>
             </div>
 
@@ -23,13 +23,8 @@ const Footer = () => {
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://instagram.com/greatstackdev" className='hover:text-blue-500 transition duration-300'>
+                        <a target="_blank" href="https://www.linkedin.com/in/mohammed-haydar/" className='hover:text-blue-500 transition duration-300'>
                             LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://instagram.com/greatstackdev" className='hover:text-blue-500 transition duration-300'>
-                            Twitter
                         </a>
                     </li>
                 </ul>

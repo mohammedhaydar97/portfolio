@@ -35,6 +35,17 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
+import trello from './trello.png';
+import clickup from './clickup.png';
+import nextjs from './next.png';
+import nestjs from './nestjs.png';
+import sql from './sql.png';
+import express from './express.png';
+import aws from './aws.png';
+import flutter from './flutter.png';
+
+
+
 
 export const assets = {
     user_image,
@@ -73,7 +84,17 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    trello,
+    clickup,
+    nextjs,
+    nestjs,
+    sql,
+    express,
+    aws,
+    flutter,
+
+
 };
 
 export const workData = [
@@ -113,5 +134,9 @@ export const infoList = [
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode, assets.figma, assets.git , assets.trello , assets.clickup
+];
+
+export const techStackData = [
+   , assets.flutter ,assets.nextjs, assets.nestjs, assets.sql , assets.express , assets.aws
 ];

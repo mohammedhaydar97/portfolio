@@ -2,17 +2,21 @@ import { assets } from '@/assets/assets';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
-const Navbar = () => {
-    const [isScroll, setIscroll] = useState(false)
+const Navbar = ({}) => {
+    const [isScroll, setIscroll] = useState(false);
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (scrollY) {
-                setIscroll(true)
+            if (window.scrollY) {
+                setIscroll(true);
             } else {
-                setIscroll(false)
+                setIscroll(false);
             }
-        })
-    })
+        });
+        return () => {
+            window.removeEventListener('scroll', null);
+        };
+    }, []);
+
     const sideMenuRef = useRef(null);
 
     const openMenu = () => {
@@ -42,9 +46,6 @@ const Navbar = () => {
                 </ul>
                 <div className='flex-grow'></div>
                 <div className='flex items-center gap-4'>
-                    <button>
-                        <Image src={assets.moon_icon} alt='' className='w-6' />
-                    </button>
                     <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full'>
                         Contact <Image src={assets.arrow_icon} alt="Arrow Icon" className="w-3" />
                     </a>
@@ -52,8 +53,11 @@ const Navbar = () => {
                         <Image src={assets.menu_black} alt='' className='w-6' />
                     </button>
                 </div>
-                {/* --- mobile menu --- */}
-                <ul ref={sideMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition-transform duration-500 transform translateX(100%)'>
+                <ul 
+                    ref={sideMenuRef} 
+                    className='flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition-transform duration-500 transform translate-x-full'
+                    style={{ transform: 'translateX(100%)' }} // Explicitly set closed state
+                >
                     <div className='absolute right-6 top-6' onClick={closeMenu}>
                         <Image src={assets.close_black} alt='' className='w-5 cursor-pointer' />
                     </div>

@@ -1,4 +1,4 @@
-import { assets, infoList, toolsData } from '@/assets/assets';
+import { assets, infoList, techStackData, toolsData } from '@/assets/assets';
 import Image from 'next/image';
 import React from 'react';
 
@@ -19,7 +19,7 @@ const About = () => {
                 </div>
                 <div className='flex-1'>
                     <p className='mb-10 max-w-2xl'>
-                        I am an experienced Frontend Developer with over a decade of professional expertise in the field. Throughout my career, I have had the privilege of collaborating with and growth.
+                        I am an experienced Full Stack Developer Developer and Project Manager with over a decade of professional expertise in the field. Throughout my career, I have had the privilege of collaborating with and growth.
                     </p>
                     <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                         {infoList.map(({ icon, iconDark, title, description }, index) => (
@@ -37,9 +37,18 @@ const About = () => {
                             </li>
                         ))}
                     </ul>
-                    <h4 className='my-6 text-gray-700'>Tool i use</h4>
+
+                    <h4 className='my-6 text-gray-700'>My Tech Stack</h4>
                     <ul className='flex items-center gap-3 sm:gap-5'>
                         {toolsData.map((tool, index) => (
+                            <li className='hover:-translate-y-1 duration-500 flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer' key={index}>
+                                <Image src={tool} alt='Tool' className='w-5 sm:w-7' />
+                            </li>
+                        ))}
+                    </ul>
+                    <h4 className='my-6 text-gray-700'>Tool i use</h4>
+                    <ul className='flex items-center gap-3 sm:gap-5'>
+                        {techStackData.map((tool, index) => (
                             <li className='hover:-translate-y-1 duration-500 flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer' key={index}>
                                 <Image src={tool} alt='Tool' className='w-5 sm:w-7' />
                             </li>

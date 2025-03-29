@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body
         cz-shortcut-listen="true"
-        className={`${outfit.className} antialiased leading-[2] overflow-x-hidden`}
+        className={`${outfit.className} antialiased leading-[2] overflow-x-hidden `}
       >
         {children}
       </body>
