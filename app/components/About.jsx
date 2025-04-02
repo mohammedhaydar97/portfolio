@@ -9,18 +9,15 @@ const About = () => {
         setIsClient(true);
     }, []);
 
-    // Function to chunk array into groups of 5
     const chunkArray = (arr, size) => {
         return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
             arr.slice(i * size, i * size + size)
         );
     };
-
-    // Generate random delays and durations for each item
     const generateRandomAnimations = (count) => {
         return Array.from({ length: count }, () => ({
-            delay: Math.random() * 2, // Random delay between 0-2 seconds
-            duration: 3 + Math.random() * 2 // Random duration between 3-5 seconds
+            delay: Math.random() * 2,
+            duration: 3 + Math.random() * 2 
         }));
     };
 

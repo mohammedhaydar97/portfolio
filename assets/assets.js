@@ -51,6 +51,7 @@ import client from './client.png';
 
 
 
+
 export const assets = {
     user_image,
     code_icon,
@@ -98,7 +99,8 @@ export const assets = {
     aws,
     flutter,
     glob,
-    client
+    client,
+    mongodb,
 
 };
 
@@ -143,5 +145,5 @@ export const toolsData = [
 ];
 
 export const techStackData = [
-   , assets.flutter ,assets.nextjs, assets.nestjs, assets.sql , assets.express , assets.aws
+   , assets.flutter ,assets.nextjs, assets.nestjs, assets.sql , assets.express , assets.aws , assets.mongodb , assets.firebase
 ];
