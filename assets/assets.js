@@ -43,6 +43,10 @@ import sql from './sql.png';
 import express from './express.png';
 import aws from './aws.png';
 import flutter from './flutter.png';
+import glob from './glob.png';
+import client from './client.png';
+
+
 
 
 
@@ -93,7 +97,8 @@ export const assets = {
     express,
     aws,
     flutter,
-
+    glob,
+    client
 
 };
 
@@ -128,9 +133,9 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.client, iconDark: assets.code_icon_dark, title: 'Clients', description: 'Worked with over 40 clients' },
+    { icon: assets.glob, iconDark: assets.glob, title: 'Countries', description: 'Worked with people from over 20 Countries' },
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 50 projects projects' }
 ];
 
 export const toolsData = [
