@@ -57,7 +57,15 @@ const Header = () => {
 
     return (
         <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center'>
-            <Image src={assets.profile_img} alt="" className='rounded-full w-32' />
+            <div className='relative w-40 h-40 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg mb-6'>
+                <Image 
+                    src={assets.profile_img} 
+                    alt="Mohammed Haydar" 
+                    layout='fill'
+                    objectFit='cover'
+                    className='rounded-full'
+                />
+            </div>
             <h3 className='flex items-end gap-2 text-xl md:text-2xl mb-10'>
                 {nameDisplay}
                 {nameIndex >= nameText.length && (
