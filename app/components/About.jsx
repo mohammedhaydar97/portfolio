@@ -55,7 +55,7 @@ const About = () => {
                     </p>
                     <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl w-full'>
                         {infoList.map(({ icon, iconDark, title, description }, index) => (
-                            <li className='border-[0.5px] border-g rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black flex flex-col items-center text-center'
+                            <li className='border-[0.5px] border-g rounded-xl p-6 cursor-pointer duration-500 hover:shadow-black flex flex-col items-center text-center'
                                 key={index}>
                                 <Image
                                     src={icon}

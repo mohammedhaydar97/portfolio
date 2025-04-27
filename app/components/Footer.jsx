@@ -1,20 +1,60 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Phone } from 'lucide-react';
 
 const Footer = () => {
-    const [isCopied, setIsCopied] = useState(false);
+    const [isCopiedEmail, setIsCopiedEmail] = useState(false);
+    const [isCopiedPhone, setIsCopiedPhone] = useState(false);
 
-    const handleCopyEmail = () => {
-        navigator.clipboard.writeText('mouhamad_haydar@outlook.com')
+    const handleCopy = (text, setCopied) => {
+        // Check if Clipboard API is available
+        if (!navigator.clipboard) {
+            // Fallback for browsers that don't support clipboard API
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+            document.body.removeChild(textArea);
+            return;
+        }
+
+        navigator.clipboard.writeText(text)
             .then(() => {
-                setIsCopied(true);
-                setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
             })
             .catch(err => {
-                console.error('Failed to copy email: ', err);
+                console.error('Failed to copy: ', err);
+                // Fallback if modern method fails
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2000);
+                } catch (err) {
+                    console.error('Fallback copy failed: ', err);
+                }
+                document.body.removeChild(textArea);
             });
+    };
+
+    const handleCopyEmail = () => {
+        handleCopy('mouhamad_haydar@outlook.com', setIsCopiedEmail);
+    };
+
+    const handleCopyPhone = () => {
+        handleCopy('+961 03395854', setIsCopiedPhone);
     };
 
     return (
@@ -22,19 +62,45 @@ const Footer = () => {
             <div className='text-center'>
                 <Image src={assets.logo} alt='' className='w-36 mx-auto mb-2' />
 
-                <div 
-                    className='w-max flex items-center gap-2 mx-auto relative group cursor-pointer hover:text-blue-500 transition-colors duration-300'
-                    onClick={handleCopyEmail}
-                >
-                    <Image src={assets.mail_icon} alt='' className='w-6' />
-                    <span>mouhamad_haydar@outlook.com</span>
-                    <div className='ml-2 w-5 h-5 flex items-center justify-center'>
-                        {isCopied ? (
-                            <Check className='w-4 h-4 text-green-500 animate-bounce' />
-                        ) : (
-                            <Copy className='w-4 h-4 group-hover:opacity-100 transition-opacity duration-300' />
-                        )}
+                <div className='flex flex-col items-center gap-4'>
+                    <div 
+                        className='w-max flex items-center gap-2 relative group cursor-pointer hover:text-blue-500 transition-colors duration-300'
+                        onClick={handleCopyEmail}
+                    >
+                        <Image src={assets.mail_icon} alt='' className='w-6' />
+                        <span>mouhamad_haydar@outlook.com</span>
+                        <div className='ml-2 w-5 h-5 flex items-center justify-center'>
+                            {isCopiedEmail ? (
+                                <Check className='w-4 h-4 text-green-500 animate-bounce' />
+                            ) : (
+                                <Copy className='w-4 h-4 group-hover:opacity-100 transition-opacity duration-300' />
+                            )}
+                        </div>
                     </div>
+
+                    <a 
+                        href="https://wa.me/96103395854" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className='w-max flex items-center gap-2 relative group cursor-pointer hover:text-blue-500 transition-colors duration-300'
+                    >
+                        <Phone className='w-6' />
+                        <span>+961 03395854</span>
+                        <div 
+                            className='ml-2 w-5 h-5 flex items-center justify-center'
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                handleCopyPhone();
+                            }}
+                        >
+                            {isCopiedPhone ? (
+                                <Check className='w-4 h-4 text-green-500 animate-bounce' />
+                            ) : (
+                                <Copy className='w-4 h-4 group-hover:opacity-100 transition-opacity duration-300' />
+                            )}
+                        </div>
+                    </a>
                 </div>
             </div>
 
