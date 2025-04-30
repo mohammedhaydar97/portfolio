@@ -31,9 +31,7 @@ const Contact = () => {
             <h4 className='text-center mb-2 text-lg font-0vo'>
                 Connect with me
             </h4>
-            <h2 className='text-center text-5x1 font-0vo'>
-                Get in touch
-            </h2>
+    
             <p className='text-center max-w-2x1 mx-auto mt-5 mb-12 font-0vo'>
                 Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in front-end development.
             </p>

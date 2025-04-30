@@ -7,8 +7,7 @@ const Work = () => {
       <h4 className="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
       <h2 className="text-center text-5xl font-Ovo">My latest work</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        I am a frontend developer from California, USA with 10 years of
-        experience in multiple companies like Microsoft, Tesla, and Apple.
+        I am a Full Stack developer from Lebanon, Worked with companies in Lebanon , UK , Swizerland
       </p>
       <div className="grid grid-cols-auto my-10 gap-5">
         {workData.map((project, index) => (

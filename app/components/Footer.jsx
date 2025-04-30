@@ -105,7 +105,9 @@ const Footer = () => {
             </div>
 
             <div className='text-center sm:flex sm:items-center sm:justify-between border-t border-gray-400 mx-[10%] mt-12 py-6'>
-                <p className='mb-4 sm:mb-0'>© 2025 Mohammed Haydar. All rights reserved.</p>
+                <p className='mb-4 sm:mb-0'>© 2025 Mohammed Haydar No rights reserved Take whatever you want. </p>
+                <p className='mb-4 sm:mb-0'></p>
+                
                 <ul className='flex justify-center gap-6 sm:gap-10 mt-4 sm:mt-0'>
                     <li>
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/yourusername" className='hover:text-blue-500 transition duration-300'>

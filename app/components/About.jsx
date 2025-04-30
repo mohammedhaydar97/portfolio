@@ -71,7 +71,7 @@ const About = () => {
                     </ul>
 
                     <div className='w-full max-w-2xl'>
-                        <h4 className='my-6 text-gray-700 text-center'>Tools I use</h4>
+                    <h4 className='text-center my-6 text-lg'>Tools I use</h4>
                         <div className='space-y-3 flex flex-col items-center'>
                             {toolsChunks.map((chunk, chunkIndex) => (
                                 <ul key={chunkIndex} className='flex items-center justify-center gap-3 sm:gap-5'>
@@ -95,8 +95,8 @@ const About = () => {
                                 </ul>
                             ))}
                         </div>
-
-                        <h4 className='my-6 text-gray-700 text-center'>My Tech Stack</h4>
+                        
+                        <h4 className='text-center my-6 text-lg'>My Tech Stack</h4>
                         <div className='space-y-3 flex flex-col items-center'>
                             {techStackChunks.map((chunk, chunkIndex) => (
                                 <ul key={chunkIndex} className='flex items-center justify-center gap-3 sm:gap-5'>
